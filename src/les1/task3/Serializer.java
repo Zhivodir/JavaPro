@@ -35,7 +35,7 @@ public class Serializer {
     public void serialize(StringBuilder sb, Object obj){
         currentClass = obj.getClass();
         sb.append(obj.getClass().getName());
-        sb.append("{");
+        sb.append(":{");
         Field[] fields = currentClass.getDeclaredFields();
         for (Field field:fields) {
             if(field.isAnnotationPresent(Save.class)){
@@ -55,36 +55,21 @@ public class Serializer {
     }
 
 //    public Object startDeserialization(){
-//        deserialize(sb, obj);
-//        try(BufferedWriter writer = new BufferedWriter(new FileWriter(pathToSave))){
-//            writer.write(sb.toString());
+//        String str = "";
+//        try(BufferedReader reader = new BufferedReader(new FileReader(pathToFile))){
+//            str = reader.readLine();
+//        } catch(IOException e){ e.printStackTrace(); }
 //
-//        } catch(IOException e){
-//            e.printStackTrace();
-//        }
+//        ClassLoaderForDeserialization classLoader = new ClassLoaderForDeserialization();
+//        String part = str.substring(0, str.indexOf('{'));
+//        Object obj = null;
+//        try {
+//            obj = classLoader.loadClass(part).newInstance();
+//        }catch(ClassNotFoundException e){e.printStackTrace();}
+//        catch (IllegalAccessException e){e.printStackTrace();}
+//        catch (InstantiationException e){e.printStackTrace();}
+//        return deserialize(str.substring(str.indexOf('{')), obj, classLoader);
 //    }
 
-    public <T> T deserialize(){
-        StringBuilder sb = new StringBuilder();
-        String str = "";
-        //T res = (T) cls.newInstance();
-        try(BufferedReader reader = new BufferedReader(new FileReader(pathToFile))){
-            str = reader.readLine();
-            System.out.println(str);
-        } catch(IOException e){ e.printStackTrace(); }
 
-        ClassLoaderForDeserialization classLoader = new ClassLoaderForDeserialization();
-        String part = str.substring(0, str.indexOf('{'));
-        Field[] fields;
-        try {
-            Object obj = classLoader.loadClass(part).newInstance();
-            fields = obj.getClass().getDeclaredFields();
-            for(Field f:fields){
-                System.out.println(f);
-            }
-        }catch(ClassNotFoundException e){e.printStackTrace();}
-        catch (IllegalAccessException e){e.printStackTrace();}
-        catch (InstantiationException e){e.printStackTrace();}
-        return null;
-    }
 }

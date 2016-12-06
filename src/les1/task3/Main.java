@@ -15,7 +15,8 @@ public class Main {
 
         Circle circle = new Circle(center, outer, color);
         Serializer serializer = new Serializer("c:/DevKit/res.txt");
+        Deserializer deserializer = new Deserializer("c:/DevKit/res.txt");
         serializer.startSerialization(circle);
-        serializer.deserialize();
+        deserializer.startDeserialization();
     }
 }
