@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trains>
+   <train>
+      <from>Kyiv</from>
+      <to>Donetsk</to>
+   </train>
+   <train>
+      <from>Kyiv</from>
+      <to>Lviv</to>
+   </train>
+</trains>

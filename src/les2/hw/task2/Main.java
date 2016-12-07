@@ -25,6 +25,7 @@ public class Main {
             while((text = reader.readLine()) != null  ) {
                 sb.append(text);
             }
+            System.out.println(sb);
         } catch(IOException e){ e.printStackTrace(); }
         return sb.toString();
     }
