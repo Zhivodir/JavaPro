@@ -12,6 +12,7 @@ public class AdapterForDate extends XmlAdapter<String, Date> {
 
     @Override
     public Date unmarshal(String v) throws Exception {
+
         return simpleDateFormat.parse(v);
     }
 
