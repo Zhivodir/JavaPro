@@ -8,6 +8,9 @@ public class Address {
     private String city;
     private String street;
 
+    public Address() {
+    }
+
     public String getCountry() {
         return country;
     }

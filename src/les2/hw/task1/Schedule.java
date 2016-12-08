@@ -1,11 +1,6 @@
 package les2.hw.task1;
 
-import javax.xml.bind.*;
 import javax.xml.bind.annotation.*;
-import java.io.*;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 /**

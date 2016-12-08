@@ -15,7 +15,6 @@ public class Train {
 
     private String from;
     private String to;
-
     private Date date;
     private Date departure;
 
